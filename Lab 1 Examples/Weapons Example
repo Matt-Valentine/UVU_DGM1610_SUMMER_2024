@@ -2,25 +2,53 @@ using System;
 
 public class Program
 {
+	public Character johnCena;
+	public Character zombie;
 	public Weapon sniperRifle;
+	public Melee hammer; 
 	public PowerUp weaponPowerUp;
 	public void Main()
+		
 	{
+		johnCena = new Character();
+		zombie = new Character();
 		sniperRifle = new Weapon();
 		weaponPowerUp = new PowerUp();
+		hammer = new Melee();
 		
 		sniperRifle.ammoCount += 5;
 		sniperRifle.firePower += weaponPowerUp.powerLevel;
+		hammer.hitPower += weaponPowerUp.powerLevel;
+		johnCena.healthPoints -= zombie.hitPoints; 
+		
+		Console.WriteLine(johnCena.characterName + " wakes up in a bar dazed and confused; he looks around to see a " + sniperRifle.weaponName + ".");
 		Console.WriteLine(sniperRifle.weaponName + "- ammo count = " + sniperRifle.ammoCount);
-		Console.WriteLine("fire power has increased by " + sniperRifle.firePower);
+		Console.WriteLine(johnCena.characterName + " is getting oriented when suddenly a drunken zombie stumbles from the kitchen biting " + johnCena.characterName + " for " + zombie.hitPoints + " hitpoints.");
+		Console.WriteLine("Health Points left " + johnCena.healthPoints);
+		Console.WriteLine(johnCena.characterName + " grabs a hammer off the bar, hits the zombie, then runs into the back room ");
+		Console.WriteLine("Cena takes a swig from the bottle on the desk effectively powering up, raising his fire power to " + sniperRifle.firePower + " and his " + hammer.weaponName + " to " + hammer.hitPower);
+		
 	}
 }
 
 public class Weapon {
-	public int ammoCount = 10;
 	public string weaponName = "Sniper Rifle"; 
+	public int ammoCount = 10;
 	public float firePower = 15f;
 }
+
 public class PowerUp {
 	public float powerLevel = 5f;
+}
+
+public class Melee {
+	public string weaponName = "Hammer";
+	public float hitPower = 2f;
+}
+public class Character {
+	public string characterName = "John Cena";
+	public int healthPoints = 200;
+	public string zombieName = "Zombie";
+	public int hitPoints = 50;
+	
 }
