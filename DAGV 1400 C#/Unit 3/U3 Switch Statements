@@ -1,0 +1,38 @@
+using System;
+					
+public class Program
+{
+	public GameStates gameState;
+	
+	public void Main()
+	{ 
+		gameState = new GameStates();
+		gameState.currentState = GameStates.States.Ending;
+		gameState.CheckState();
+	}
+}
+
+public class GameStates {
+	
+	public enum States {
+		Starting,
+		Playing,
+		Ending,
+	}
+	
+	public States currentState = States.Starting;
+	
+	public void CheckState () {
+		switch (currentState) {
+			case States.Starting:
+				Console.WriteLine("Starting Game");
+				break;
+			case States.Playing:
+				Console.WriteLine("Playing");
+				break;
+			case States.Ending:
+				Console.WriteLine("Ending Game");
+				break;
+		}
+	}
+}
