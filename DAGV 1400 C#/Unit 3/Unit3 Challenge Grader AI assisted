@@ -1,0 +1,96 @@
+using System;
+					
+public class Program
+{
+	public void Main()
+	{
+		Console.WriteLine("Challenge 2: Exam Grader");
+		
+		Console.WriteLine("Enter Grade as 0-100");
+		int score = Convert.ToInt32(Console.ReadLine());
+		
+		Console.WriteLine("Enter Subject (Math, Science, English, Health, Gym)");
+		string SchoolSubject = Convert.ToString(Console.ReadLine());
+		
+		// Grade System
+		if(score >= 90 && score <= 100)
+		{
+			Console.WriteLine("Grade: A - Superb!");
+		} 
+		else if (score >= 80 && score < 90)
+		{
+			Console.WriteLine("Grade: B - Well Done!");
+		}
+		else if (score >= 70 && score < 80)
+		{
+			Console.WriteLine("Grade: C - Nice Job!");
+		}
+		else if (score >= 60 && score < 70)
+		{
+			Console.WriteLine("Grade: D - Nice Try");
+		}
+		else if (score >= 0 && score < 60) 
+		{
+			Console.WriteLine("Grade: F - Fail");
+		} 
+		else 
+		{
+			Console.WriteLine("Invalid score. Enter score between 0-100");
+		}
+		
+		// School Subject
+		SchoolSubject.Subject favoriteSubject;
+		if (Enum.TryParse(SchoolSubject, true, out favoriteSubject))
+		{
+			SchoolSubject subject = new SchoolSubject(favoriteSubject);
+			subject.CheckSubject();
+		}	
+		else 
+		{
+			Console.WriteLine("Invalid subject. Enter a valid subject (Math, Science, English, Health, Gym)");
+		}	
+	}
+}
+
+public class SchoolSubject 
+{
+	public enum Subject
+	{
+		Math,
+		Science,
+		English,
+		Health,
+		Gym
+	}
+	public Subject FavoriteSubject { get; set;}
+	
+	public SchoolSubject(Subject favoriteSubject)
+	{
+        FavoriteSubject = favoriteSubject;
+    }
+		
+	public void CheckSubject()
+	{
+		switch (FavoriteSubject)
+		{
+			case Subject.Math:
+				Console.WriteLine("Keep it up, Math is hard!");
+				break;	
+			case Subject.Science:
+				Console.WriteLine("Science Rules!");
+				break;
+			case Subject.English:
+				Console.WriteLine("Keep Writing future Shakespeare!");
+				break;
+			case Subject.Health:
+				Console.WriteLine("A healthy body is the key to success!");
+				break;
+			case Subject.Gym:
+				Console.WriteLine("Physical fitness is important!");
+				break;
+			default: 
+				Console.WriteLine("invalid subject. Enter a valid subject (Math, Science, English, Health, Gym)");
+				break;
+		}
+	}
+}
