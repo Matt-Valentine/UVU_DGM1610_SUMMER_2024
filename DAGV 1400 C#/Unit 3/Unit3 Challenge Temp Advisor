@@ -1,0 +1,39 @@
+using System;
+					
+public class Program
+{
+	public static void Main() 
+	{
+		
+		Console.WriteLine("Challenge: Temp Advisor");
+		Console.WriteLine("Enter current temperature in degrees celsius:");
+		
+		double temperature = Convert.ToDouble(Console.ReadLine());
+		
+		// Temperature Scale
+		if(temperature >= 38 && temperature <= 50)
+		{
+			Console.WriteLine("Be advised, it's hot out! Take precautions or stay indoors");
+		} 
+		else if (temperature >= 30 && temperature < 38)
+		{
+			Console.WriteLine("It's warm stay hydrated ");
+		}
+		else if (temperature >= 16 && temperature < 30)
+		{
+			Console.WriteLine("Enjoy the weather! :)");
+		}	
+		else if (temperature >= 0 && temperature < 16)
+		{
+			Console.WriteLine("It might be cold, bring a jacket! :)");
+		}
+		else if (temperature >= -10 && temperature < 0)
+		{
+			Console.WriteLine("Be advised it's cold out! Take precautions to stay warm");
+		}
+		else 
+		{
+			Console.WriteLine("Invalid temperature (Enter temperature between: -10 and 50) ");
+		}
+	}
+}
