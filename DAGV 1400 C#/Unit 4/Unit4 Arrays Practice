@@ -1,0 +1,21 @@
+using System;
+					
+public class Program
+{
+	public void Main()
+	{
+		
+		string [] characters = {"Bard", "Cleric", "Barbarian", "Warrior"};
+		for (int i = 2; i < characters.Length; i++ )
+		{
+			Console.WriteLine(characters [i]);
+		}
+		
+		string [] weapons = {"Lute", "Bible", "Axe", "Sword"};
+		foreach (string w in weapons)
+		{
+			Console.WriteLine(w);
+		}
+		
+	}
+}	
