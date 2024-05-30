@@ -1,0 +1,36 @@
+sing System;
+					
+public class Program
+{
+	public void Main()
+	{
+		
+		// While/Do While loops
+		int v = 0;
+		do
+		{
+			Console.WriteLine(v);
+			v++;
+		}
+		while (v < 5);
+		
+		
+		// For/Foreach loops
+		for (int i = 5; i <= 20; i = i + 5  )
+		{
+			Console.WriteLine(i);
+		}
+		string [] characters = {"Bard", "Cleric", "Barbarian", "Warrior"};
+		foreach (string c in characters)
+		{
+			Console.WriteLine(c);
+		}
+		string [] weapons = {"Lute", "Bible", "Axe", "Sword"};
+		foreach (string w in weapons)
+		{
+			Console.WriteLine(w);
+		}
+		
+	}
+}
+	
