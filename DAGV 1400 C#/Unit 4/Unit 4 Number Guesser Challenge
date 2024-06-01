@@ -1,0 +1,42 @@
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("Number Guesser Game");
+		Console.WriteLine("Welcome to the number guesser! I've come up with a number, guess what it is to get your prize!");
+		
+		// Random Number Generator
+		Random number = new Random();
+		int numberGenerated = number.Next(1, 11);
+		
+		// Loop Program
+		bool correctAnswer = false;
+		int userAttempts = 5;
+		while (!correctAnswer)
+		{
+			Console.WriteLine("Enter your guess: ");
+			int userAnswer = Convert.ToInt32(Console.ReadLine());
+			userAttempts++;
+			// Answer Check
+			if (userAnswer == numberGenerated)
+			{
+				correctAnswer = true;
+				Console.WriteLine("Congratulations here is your prize: https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+			}	
+				else if (userAnswer < 1 || userAnswer > 10)
+				{
+					Console.WriteLine("Try entering a number between 1-10");
+				}
+				else if (userAnswer < numberGenerated)
+				{
+					Console.WriteLine("Too low try again");
+				}
+			else 
+			{
+				Console.WriteLine("Too high try again");
+			}
+		}
+    }
+}
