@@ -1,0 +1,39 @@
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("Favorite Food Compiler");
+		Console.WriteLine("List your top 5 favorite foods!");
+		string[] favoriteFoods = new string[5]; // 
+		
+		for (int foodItem = 0; foodItem < favoriteFoods.Length; foodItem++ )
+		{
+			Console.Write("Enter food item: ");
+			favoriteFoods[foodItem] = Console.ReadLine();
+		}
+		
+		for (int foodItem = 0; foodItem < favoriteFoods.Length; foodItem++)
+		{
+			switch (foodItem)
+			{
+				case 0: 
+					Console.WriteLine("I love " + favoriteFoods[foodItem] + "!");
+					break;
+				case 1:
+					Console.WriteLine(favoriteFoods[foodItem] + " is AMAZING!!");
+					break;
+				case 2: 
+					Console.WriteLine("oooooo " + favoriteFoods[foodItem] + "!");
+					break;
+				case 3:
+					Console.WriteLine("Many seem to enjoy " + favoriteFoods[foodItem] + ".");
+					break;
+				case 4: 
+					Console.WriteLine(favoriteFoods[foodItem] + " - DELICIOUS!");
+					break;
+			}
+		}
+    }
+}
