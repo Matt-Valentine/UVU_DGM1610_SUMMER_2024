@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VariablesFunctions : MonoBehaviour
+public class Variables : MonoBehaviour
 {
     int myInt = 5;
 

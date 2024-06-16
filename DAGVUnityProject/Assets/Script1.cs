@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Script1 : MonoBehaviour
@@ -13,11 +11,11 @@ public class Script1 : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.G))
         {
-            GetComponent<Renderer>().material.color = Color.Green;
+            GetComponent<Renderer>().material.color = Color.green;
         }
-        if (Input>GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B))
         {
-            GetComponent<Renderer>().material.color = Color.Blue;
+            GetComponent<Renderer>().material.color = Color.blue;
         }
     }
 
