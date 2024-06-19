@@ -32,11 +32,10 @@ public class PlayerController : MonoBehaviour
 
 	// Calculate movement direction based on input
 		Vector3 move = transform.right * moveX + transform.forward * moveZ;
+		_moveDirection = move * moveSpeed;
 
 		if (_controller.isGrounded)
 		{
-			_moveDirection = move * moveSpeed;
-			
 			if (Input.GetButtonDown("Jump"))
 			{
 				_moveDirection.y = jumpForce;
