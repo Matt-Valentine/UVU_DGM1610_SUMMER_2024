@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc7ba93ab128054691d07ca3a45e36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 30
 --- !u!1 &7866854890638385802
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +111,7 @@ GameObject:
   - component: {fileID: 733986219398466927}
   m_Layer: 0
   m_Name: Obstacle1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,8 +151,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2.5, z: 4}
-  m_Center: {x: 0, y: 0.86, z: 0}
+  m_Size: {x: 1, y: 1.9, z: 3.75}
+  m_Center: {x: 0, y: 0.99, z: 0}
 --- !u!54 &8108504551627215476
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -191,3 +192,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc7ba93ab128054691d07ca3a45e36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5

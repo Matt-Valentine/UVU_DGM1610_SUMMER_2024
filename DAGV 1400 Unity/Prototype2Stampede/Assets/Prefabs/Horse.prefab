@@ -993,8 +993,11 @@ GameObject:
   - component: {fileID: 8001127046002651219}
   - component: {fileID: 1258489644853284942}
   - component: {fileID: 7133514473693487044}
+  - component: {fileID: 2189807570440380705}
+  - component: {fileID: 5756400265344985301}
+  - component: {fileID: 5331158208217709675}
   m_Layer: 0
-  m_Name: Animal_Horse_Black
+  m_Name: Horse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1054,7 +1057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dab0e7e404e9b0478a7ac50c533e446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  speed: 30
 --- !u!114 &7133514473693487044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1067,6 +1070,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f13508fecd7f28c498f96d1bdff1375a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &2189807570440380705
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391410839996996790}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 15.857925, y: 41.188972, z: 53.644215}
+  m_Center: {x: -0.20160675, y: 17.120905, z: 3.7465453}
+--- !u!114 &5756400265344985301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391410839996996790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b07a51037d609c42b893f32f56e4928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &5331158208217709675
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391410839996996790}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4511058212190645066
 GameObject:
   m_ObjectHideFlags: 0
