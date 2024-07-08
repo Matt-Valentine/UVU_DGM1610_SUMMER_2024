@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerControllerX : MonoBehaviour
 {
@@ -16,11 +14,22 @@ public class PlayerControllerX : MonoBehaviour
     private AudioSource playerAudio;
     public AudioClip moneySound;
     public AudioClip explodeSound;
+    public AudioClip bounceSound;
+
+    public bool isLowEnough = true;
+    public float maxHeight = 10.0f;
+    private bool isOnGround = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        playerRb = GetComponent<Rigidbody>();
+        if (playerRb == null)
+        {
+            Debug.LogError("Rigidbody component missing");
+        }
+        
         Physics.gravity *= gravityModifier;
         playerAudio = GetComponent<AudioSource>();
 
@@ -33,9 +42,21 @@ public class PlayerControllerX : MonoBehaviour
     void Update()
     {
         // While space is pressed and player is low enough, float up
-        if (Input.GetKey(KeyCode.Space) && !gameOver)
+        isLowEnough = transform.position.y < maxHeight;
+        if (Input.GetKey(KeyCode.Space) && isLowEnough && !gameOver)
         {
             playerRb.AddForce(Vector3.up * floatForce);
+        }
+
+        if (transform.position.y <= 0)
+        {
+            transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+            playerRb.velocity = new Vector3(playerRb.velocity.x, 0, playerRb.velocity.z);
+            isOnGround = true;
+        }
+        else 
+        {
+            isOnGround = false;
         }
     }
 
@@ -58,6 +79,12 @@ public class PlayerControllerX : MonoBehaviour
             playerAudio.PlayOneShot(moneySound, 1.0f);
             Destroy(other.gameObject);
 
+        }
+        else if (other.gameObject.CompareTag("Ground"))
+        {
+            playerRb.AddForce(Vector3.up * floatForce, ForceMode.Impulse);
+            playerAudio.PlayOneShot(bounceSound, 1.0f);
+            isOnGround = false;
         }
 
     }
