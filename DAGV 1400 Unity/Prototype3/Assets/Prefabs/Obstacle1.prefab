@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3467825460575408111}
   - component: {fileID: 8050407045317699892}
   - component: {fileID: 4098328265936111452}
-  - component: {fileID: 3208322651401536741}
   m_Layer: 0
   m_Name: Prop_Barrier02
   m_TagString: Untagged
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3208322651401536741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3051953260888362523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fc7ba93ab128054691d07ca3a45e36a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 30
 --- !u!1 &7866854890638385802
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,9 +92,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5727316674919241268}
-  - component: {fileID: 6659065054296745623}
   - component: {fileID: 8108504551627215476}
-  - component: {fileID: 733986219398466927}
+  - component: {fileID: 2160838371555455223}
+  - component: {fileID: 4122498166825869236}
   m_Layer: 0
   m_Name: Obstacle1
   m_TagString: Obstacle
@@ -132,27 +118,6 @@ Transform:
   - {fileID: 3467825460575408111}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6659065054296745623
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7866854890638385802}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1.9, z: 3.75}
-  m_Center: {x: 0, y: 0.99, z: 0}
 --- !u!54 &8108504551627215476
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -180,7 +145,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &733986219398466927
+--- !u!114 &2160838371555455223
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,4 +157,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc7ba93ab128054691d07ca3a45e36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 30
+--- !u!65 &4122498166825869236
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7866854890638385802}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1276722, y: 1.9499005, z: 3.8987908}
+  m_Center: {x: -0.0638361, y: 0.97744447, z: -0.09780002}

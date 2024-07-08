@@ -3,6 +3,7 @@ using UnityEngine;
 public class MoveLeft : MonoBehaviour
 {
     public float speed = 30.0f;
+    private Rigidbody playerRb;
 
     private PlayerController playerControllerScript;
 
@@ -11,17 +12,17 @@ public class MoveLeft : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerRb = GetComponent<Rigidbody>();
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.Translate(Vector3.left * (Time.deltaTime * speed), Space.World);
-        
-        if (playerControllerScript.gameOver == false)
+        if (!playerControllerScript.gameOver)
         {
-            transform.Translate(Vector3.left * (Time.deltaTime * speed));
+            Vector3 newPos = playerRb.position + Vector3.left * (Time.deltaTime * speed);
+            playerRb.MovePosition(newPos);
         }
 
         if (transform.position.x < leftBound && gameObject.CompareTag("Obstacle"))
