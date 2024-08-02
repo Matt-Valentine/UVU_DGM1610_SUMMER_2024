@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
     public float speed = 20.0f;
-    public float xRange = 12;
+    public float xRange = 20;
     public Transform blaster;
 
     public GameObject blasterBolt;
